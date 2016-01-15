@@ -18,7 +18,7 @@ public class MediaScanner extends CordovaPlugin implements MediaScannerConnectio
 	private MediaScannerConnection scanner;
 	private String filePath;
 
-	public boolean execute(final String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+	public boolean execute(final String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
 		if(action.equals("mediaScanner")) {
 			Log.i("Call", "OK, on tente un scan...");
 
