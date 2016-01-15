@@ -25,7 +25,22 @@ public class MediaScanner extends CordovaPlugin implements MediaScannerConnectio
 			try {
 				filePath = args.getString(0);		//_Get the path of the media to scan
 
-				return this.mediaScanner(filePath, callbackContext);
+				MediaScannerConnection.scanFile(this.cordova.getActivity().getApplicationContext(),
+                    new String[] { filePath },
+                    null,
+                    new MediaScannerConnection.OnScanCompletedListener() {
+                            public void onScanCompleted(String path, Uri uri) {
+                                Log.i("ExternalStorage", "Scanned " + path + ":");
+                                Log.i("ExternalStorage", "-> uri=" + uri);
+                                if(uri == null){
+                                    callbackContext.error("error");
+                                }else{
+                                    callbackContext.success();
+                                }
+                            }
+                });
+
+				// return this.mediaScanner(filePath, callbackContext);
 			} catch (JSONException e) {
 				e.printStackTrace();
 		        	callbackContext.error(e.getMessage());
@@ -34,6 +49,7 @@ public class MediaScanner extends CordovaPlugin implements MediaScannerConnectio
 		} else {
 			return false;
 		}
+		return false;
 	}
 
 	private boolean mediaScanner(String mediaPath, CallbackContext callback) {
