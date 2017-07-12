@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-android-mediascanner",
+  "version": "0.0.1",
+  "description": "Android Media Scanner",
+  "cordova": {
+    "id": "cordova-plugin-android-mediascanner",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  }
+}
