@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Android Media Scanner",
   "cordova": {
-    "id": "cordova-plugin-android-mediascanner",
+    "id": "com.pandazaur.mediascanner",
     "platforms": [
       "ios",
       "android"
