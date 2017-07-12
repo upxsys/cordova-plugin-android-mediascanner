@@ -8,5 +8,9 @@
       "ios",
       "android"
     ]
+  },
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upxsys/cordova-plugin-android-mediascanner.git"
   }
 }
